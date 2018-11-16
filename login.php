@@ -1,19 +1,20 @@
 <?php
-require "funcoes.php";
+require_once "funcoes.php";
+require_once "conexao.php";
 
-$usuario = $_POST['usuario'];
-$senha = make_hash($_POST['senha']);
+$usuario = mysqli_real_escape_string($conexao,$_POST['email']);
+$senha = mysqli_real_escape_string($conexao,make_hash($_POST['senha']));
 
-$query = "select * from cadastro where usuario = '$usuario' and senha = '$senha'";
+$query = "select * from usuarios where email = '$usuario' and senha = '$senha'";
 
-$result = mysqli_query($db, $query);
+$result = mysqli_query($conexao, $query);
 
 $row = mysqli_num_rows($result);
 $dados = mysqli_fetch_array($result);
 if($row == 1) {
     session_start();
-    $_SESSION['usuario'] = $dados['usuario'];
-    header('Location: index.php');
+    $_SESSION['usuario'] = $dados['email'];
+    echo '<script type="application/javascript">alert("Logado com sucesso!");</script>';
 
     exit();
 } else {
