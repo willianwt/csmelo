@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Cs Melo</title>
 </head>
 <body>
 
@@ -66,19 +66,19 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form>
+            <form method="POST" action="login.php">
                 <div class="modal-body">
 
                     <div class="form-group">
-                        <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuário">
+                        <input type="text" class="form-control" id="email" name="email" placeholder="Email">
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+                        <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha">
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary">Entrar</button>
+                    <button type="submit" class="btn btn-primary">Entrar</button>
                 </div>
             </form>
 
