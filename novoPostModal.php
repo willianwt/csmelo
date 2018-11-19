@@ -8,12 +8,12 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form>
+            <form action="novoPost.php" method="POST">
             <div class="modal-body">
                     <div class="container-fluid">
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="customFile" lang="pt-br">
-                            <label class="custom-file-label" for="customFile">Selecionar Foto Principal</label>
+                            <input type="file" class="custom-file-input" id="customFile" name="foto_principal"  lang="pt-br">
+                            <label class="custom-file-label" for="customFile" >Selecionar Foto Principal</label>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-4">
