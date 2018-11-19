@@ -34,7 +34,19 @@ function menu(){
                 <a class="nav-link" href="logout.php" style="cursor:pointer;"><i class="fas fa-sign-out-alt"></i></a>';
             }
         $menu .= '</ul>
-    </div>
-</nav>';
+            </div>
+        </nav>';
         echo $menu;
 }
+
+function upload_file($file)
+    {
+        if(isset($file))
+        {
+            $extension = explode('.', $file["name"]);
+            $new_name = date('Y-m-d_H.i.s') . '.' . $extension[1];
+            $destination = './imagens/' . $new_name;
+            move_uploaded_file($file['tmp_name'], $destination);
+            return $new_name;
+        }
+    }
