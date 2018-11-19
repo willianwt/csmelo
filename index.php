@@ -3,8 +3,7 @@
     header('Content-type: text/html; charset=UTF-8');
     include "conexao.php";
     include "funcoes.php";
-    include "loginModal.php";
-    include "novoPostModal.php";
+
 
 ?>
 
@@ -25,43 +24,25 @@
 <body>
 
 <!-- BARRA DE NAVEGAÇÃO -->
-<nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #e3f2fd;">
-    <a class="navbar-brand" href="#">Cs Melo Cutelaria Artesanal</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse dropdown" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a href="?page=anuncios"><i class="fas fa-home fa-2x allign-middle mx-1"></i></span></a>
-            </li>
-            <li class="nav-item">
-                <button onclick="location.href='?page=mensagens';" class="btn btn-success"><i class="fas fa-comments fa-md"></i> Mensagens</button>
-            </li>
-
-        </ul>
-        <ul class="navbar-nav ml-auto">
-            <?php if (!isset($_SESSION['usuario'])){ ?>
-                <li class="nav-item active">
-                    <a class="nav-link" data-toggle="modal" data-target="#login_modal" style="cursor:pointer;"><i class="fas fa-lock"></i></a>
-                </li>
-            <?php }else{ ?>
-                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#novoPostModal">Inserir Novo</button>
-                <a class="nav-link" href="logout.php" style="cursor:pointer;"><i class="fas fa-sign-out-alt"></i></a>
-
-            <?php } ?>
-        </ul>
-    </div>
-</nav>
-<!-- -->
+<?php menu(); ?><!-- -->
 
 
 
 <div class="container-fluid">
-    <?php
-    include "switch.php";
-    ?>
+    <div class="row mb-3">
+        <?php for ($i=0; $i < 12 ; $i++) {
+            echo '
+                 <div class="col-md-3 mt-2" >
+                     <div class="border">
+                        <img src="imagens/faca1%20(3).jpg" class="img-fluid px-1 py-1" alt="Responsive image" style="height: auto;" >
+                        <div class="px-1 pb-1">
+                        <a href="#" class="btn btn-info toggle-btn"><i class="fas fa-info-circle fa-md"></i> Detalhes</a>
+                        <a href="#" class="float-right btn btn-warning"><i class="fas fa-comments fa-md"></i> Contato</a>
+                        </div>
+                    </div>
+                </div>';
+        } ?>
+    </div>
 
 </div>
 

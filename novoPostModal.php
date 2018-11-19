@@ -32,45 +32,49 @@
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="inputAddress">Material da Lâmina:</label>
-                                <input type="text" class="form-control" id="material_lamina" placeholder="Tamanho da Lâmina">
+                                <input type="text" class="form-control" id="material_lamina" placeholder="Material da Lâmina">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="inputAddress">Comprimento da Lâmina:</label>
-                                <input type="text" class="form-control" id="tamanho_lamina" placeholder="Tamanho da Lâmina">
+                                <input type="text" class="form-control" id="tamanho_lamina" placeholder="Comprimento da Lâmina">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="inputAddress">Largura da Lâmina:</label>
-                                <input type="text" class="form-control" id="largura_lamina" placeholder="Tamanho da Lâmina">
+                                <input type="text" class="form-control" id="largura_lamina" placeholder="Largura da Lâmina">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="inputAddress">Material do Cabo:</label>
-                                <input type="text" class="form-control" id="material_lamina" placeholder="Tamanho da Lâmina">
+                                <input type="text" class="form-control" id="material_lamina" placeholder="Material do Cabo">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="inputAddress">Comprimento do Cabo:</label>
-                                <input type="text" class="form-control" id="tamanho_lamina" placeholder="Tamanho da Lâmina">
+                                <input type="text" class="form-control" id="tamanho_lamina" placeholder="Comprimento do Cabo">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="inputAddress">Dorso:</label>
-                                <input type="text" class="form-control" id="largura_lamina" placeholder="Tamanho da Lâmina">
+                                <input type="text" class="form-control" id="largura_lamina" placeholder="Dorso">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-4">
-                                <label for="galeria1">Example file input</label>
+                                <label for="galeria1">Galeria 1</label>
                                 <input type="file" class="form-control-file" id="galeria1">
                                 <input type="hidden" name="galeria1" id="galeria1" />
                                 <span id="galeria1"></span>
                             </div>
                             <div class="form-group col-md-4">
-                                <input type="file" class="custom-file-input" id="galeria2" lang="pt-br">
-                                <label class="custom-file-label mr-1" for="galeria2">Galeria</label>
+                                <label for="galeria2">Galeria 2</label>
+                                <input type="file" class="form-control-file" id="galeria2">
+                                <input type="hidden" name="galeria1" id="galeria2" />
+                                <span id="galeria2"></span>
                             </div>
                             <div class="form-group col-md-4">
-                                <input type="file" class="custom-file-input" id="galeria3" lang="pt-br">
-                                <label class="custom-file-label mr-1" for="galeria3">Galeria</label>
+                                <label for="galeria3">Galeria 3</label>
+                                <input type="file" class="form-control-file" id="galeria3">
+                                <input type="hidden" name="galeria3" id="galeria3" />
+                                <span id="galeria3"></span>
                             </div>
                         </div>
                     </div>
