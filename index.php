@@ -17,6 +17,13 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 
     <title>Cs Melo</title>
+    	<style>
+        nav{
+          background: url("menu.jpg") no-repeat !important;
+          background-size: 100% 100% !important;
+        }
+
+	    </style>
 </head>
 <body>
 
