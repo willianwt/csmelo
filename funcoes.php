@@ -6,7 +6,6 @@ function make_hash($str){
 
 function menu(){
     include "loginModal.php";
-    include "novoPostModal.php";
     $menu = '<nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #e3f2fd;">
     <a class="navbar-brand" href="index.php"><i class="fas fa-fire"></i> Cs Melo Cutelaria Artesanal <i class="fas fa-fire"></i></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +29,7 @@ function menu(){
                     <a class="nav-link" data-toggle="modal" data-target="#login_modal" style="cursor:pointer;"><i class="fas fa-lock"></i></a>
                 </li>';
             }else{
-                $menu .= '<button type="button" class="btn btn-success" data-toggle="modal" data-target="#novoPostModal">Inserir Novo</button>
+                $menu .= '<a class="btn btn-success" href="novoPost.php">Inserir Novo</a>
                 <a class="nav-link" href="logout.php" style="cursor:pointer;"><i class="fas fa-sign-out-alt"></i></a>';
             }
         $menu .= '</ul>
@@ -41,12 +40,10 @@ function menu(){
 
 function upload_file($file)
     {
-        if(isset($file))
-        {
-            $extension = explode('.', $file["name"]);
-            $new_name = date('Y-m-d_H.i.s') . '.' . $extension[1];
-            $destination = './imagens/' . $new_name;
+            $extension = explode('.', strtolower($file["name"]));
+            $new_name = md5(uniqid(time())) . '.' . $extension[1];
+            $destination = 'imagens/' . $new_name;
             move_uploaded_file($file['tmp_name'], $destination);
             return $new_name;
-        }
+
     }
