@@ -30,7 +30,7 @@
 <div class="container-fluid">
     <div class="row mb-3">
         <?php
-        $sql = "SELECT * FROM produto";
+        $sql = "SELECT * FROM produto ORDER BY id DESC";
         $res = $conexao -> query($sql);
         while($row = $res->fetch_assoc()) {
             echo '<div class="col-md-4 mt-2" >

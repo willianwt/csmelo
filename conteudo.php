@@ -11,7 +11,7 @@ if(!empty($_GET['id'])){
 
     if($sql->num_rows > 0){
         $row = $sql->fetch_assoc();
-        echo '<h4 class="text-center"><b><u> '.$row['nome_produto'].'</u></b></h4>';
+        echo '<h4 class="text-center"><b><u> '.ucfirst($row['nome_produto']).' - '.$row['id'].'</u></b></h4>';
         echo '<p class="texto_modal_detalhes"><b>Tamanho Total:</b> '.$row['tamanho_total'].'</p>';
         echo '<p class="texto_modal_detalhes"><b>Cor: </b>'.$row['cor'].'</p>';
         echo '<p class="texto_modal_detalhes"><b>Material da Lâmina: </b>'.$row['material_lamina'].'</p>';
