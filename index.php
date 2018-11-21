@@ -65,7 +65,7 @@
                             <a href="javascript:void(0);" data-href="conteudo.php?id='.$row['id'].'" class="btn btn-info toggle-btn modalDetalhes"><i class="fas fa-info-circle fa-md"></i> Detalhes</a>
                             <a href="javascript:void(0);" data-href="enviarMensagem.php?id='.$row['id'].'" class="float-right btn btn-warning gosteiDeste"><i class="fas fa-comments fa-md"></i> Gostei deste!</a>';
                             if (isset($_SESSION['usuario'])){
-                                echo '<a href="editar.php?id_produto='.$row['id'].'" class="btn btn-secondary"><i class="far fa-edit fa-lg"></i></a>
+                                echo '<a href="editar.php?id_produto='.$row['id'].'" class="btn btn-secondary"><i class="far fa-edit fa-md"></i></a>
 
                                 <button onclick="if(confirm(\'tem certeza que deseja excluir o PRODUTO '.$row['nome_produto'].'?\')){location.href=\'deletar.php?id='.$row['id'].'\';}else{false;}"  class=\'btn btn-danger\'><i class="fas fa-trash-alt"></i></button>'; }
 
