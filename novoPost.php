@@ -18,7 +18,7 @@ if (isset($_POST["nome"])) {
     $insediro_por = $_SESSION['usuario'];
 
     $sql = "INSERT INTO produto 
-            (nome, tamanho_total, cor, material_lamina, comprimento_lamina, largura_lamina, material_cabo, comprimento_cabo, dorso, galeria1, galeria2, galeria3, inserido_por)
+            (nome_produto, tamanho_total, cor, material_lamina, comprimento_lamina, largura_lamina, material_cabo, comprimento_cabo, dorso, galeria1, galeria2, galeria3, inserido_por)
              VALUES 
             ('$nome', '$tam_total','$cor','$mat_lamina','$comp_lamina','$larg_lamina','$mat_cabo','$comp_cabo','$dorso','$galeria1','$galeria2','$galeria3','$insediro_por')";
 
@@ -42,6 +42,7 @@ if (isset($_POST["nome"])) {
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="plugins/bootstrap.css" >
+    <link rel="stylesheet" href="plugins/estilo.css" >
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 
     <title>Cs Melo</title>
@@ -54,7 +55,7 @@ if (isset($_POST["nome"])) {
 
 
 <div class="container mb-4 mt-2">
-    <form action="novoPost.php" method="POST" class="border px-2 py-2" enctype="multipart/form-data">
+    <form action="novoPost.php" method="POST" class="border rounded cardbg px-2 py-2" enctype="multipart/form-data">
             <div class="mb-2 border-bottom">
                 <h1 class="text-center">Inserir Novo Anúncio</h1>
             </div>
@@ -116,7 +117,7 @@ if (isset($_POST["nome"])) {
                 <p class="ml-auto" style="font-size: 0.7rem;">*as fotos devem ter a mesma proporção! (todas em pé ou todas deitadas)</p>
             </div>
 
-        <div class="form-row">
+        <div class="form-row mx-1">
             <a href="index.php" class="btn btn-secondary mr-auto">Cancelar</a>
             <button type="submit" class="btn btn-success ml-auto">Enviar</button>
         </div>

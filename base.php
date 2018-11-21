@@ -14,6 +14,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="plugins/bootstrap.css" >
+    <link rel="stylesheet" href="plugins/estilo.css" >
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 
     <title>Cs Melo</title>
@@ -30,9 +31,6 @@
 </div>
 
 
-<footer class=" container-fluid footer fixed-bottom text-right" style="background-color: #e3f2fd;">
-        <span>Place sticky footer content here.</span>
-    </footer>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -1,0 +1,24 @@
+nav{
+    background: url("../menu.jpg") no-repeat !important;
+    background-size: 100% 100% !important;
+}
+body{
+    background-color: rgba(240,217,166, 0.6);
+}
+
+.cardbg{
+    background-color: rgba(217,131,51,0.4);
+}
+#home{
+    color: red;
+}
+#whatsapp{
+    color: limegreen;
+}
+#instagram{
+    color: darkorange;
+}
+
+.texto_modal_detalhes{
+    font-size: 1.2rem;
+}

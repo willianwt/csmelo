@@ -14,16 +14,11 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="plugins/bootstrap.css" >
+    <link rel="stylesheet" href="plugins/estilo.css" >
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 
     <title>Cs Melo</title>
-    	<style>
-        nav{
-          background: url("menu.jpg") no-repeat !important;
-          background-size: 100% 100% !important;
-        }
 
-	    </style>
 </head>
 <body>
 
@@ -39,7 +34,7 @@
         $res = $conexao -> query($sql);
         while($row = $res->fetch_assoc()) {
             echo '<div class="col-md-4 mt-2" >
-                     <div class="border px-2 py-2">
+                     <div class="border rounded px-2 py-2 cardbg">
                         <div id="produto'.$row['id'].'" class="carousel slide" data-ride="carousel" data-interval="false">
                           <ol class="carousel-indicators">
                             <li data-target="#produto'.$row['id'].'" data-slide-to="0" class="active"></li>
@@ -67,10 +62,12 @@
                           </a>
                       </div>
                         <div class="mt-2 pt-2">
-                            <a href="#" class="btn btn-info toggle-btn"><i class="fas fa-info-circle fa-md"></i> Detalhes</a>
-                            <a href="#" class="float-right btn btn-warning"><i class="fas fa-comments fa-md"></i> Contato</a>';
+                            <a href="javascript:void(0);" data-href="conteudo.php?id='.$row['id'].'" class="btn btn-info toggle-btn modalDetalhes"><i class="fas fa-info-circle fa-md"></i> Detalhes</a>
+                            <a href="javascript:void(0);" data-href="enviarMensagem.php?id='.$row['id'].'" class="float-right btn btn-warning gosteiDeste"><i class="fas fa-comments fa-md"></i> Gostei deste!</a>';
                             if (isset($_SESSION['usuario'])){
-                                echo '<button onclick="if(confirm(\'tem certeza que deseja excluir o PRODUTO '.$row['nome'].'?\')){location.href=\'deletar.php?id='.$row['id'].'\';}else{false;}"  class=\'btn btn-danger\'>Excluir</button>'; }
+                                echo '<a href="editar.php?id_produto='.$row['id'].'" class="btn btn-secondary"><i class="far fa-edit fa-lg"></i></a>
+
+                                <button onclick="if(confirm(\'tem certeza que deseja excluir o PRODUTO '.$row['nome_produto'].'?\')){location.href=\'deletar.php?id='.$row['id'].'\';}else{false;}"  class=\'btn btn-danger\'><i class="fas fa-trash-alt"></i></button>'; }
 
                        echo '</div>
                     </div>
@@ -80,18 +77,73 @@
     </div>
 
 </div>
+<!-- Modal Detalhes -->
+<div class="modal fade" id="modal_detalhes" tabindex="-1" role="dialog" aria-labelledby="modalInformacoesTitulo" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalInformacoesTitulo">Detalhes</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
 
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
-<footer class=" container-fluid footer fixed-bottom text-right" style="background-color: #e3f2fd;">
-        <span>Place sticky footer content here.</span>
-    </footer>
+<!-- Modal Gostei Deste - Enviar Mensagem -->
 
+<div class="modal fade" id="gostei_deste" tabindex="-1" role="dialog" aria-labelledby="modalInformacoesTitulo" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <form action="enviarMensagem.php" method="POST">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalInformacoesTitulo">Enviar Mensagem</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-success">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="plugins/jquery-3.3.1.js"></script>
 <script src="plugins/popper.js"></script>
 <script src="plugins/bootstrapJS.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.modalDetalhes').on('click',function(){
+            var dataURL = $(this).attr('data-href');
+            $('.modal-body').load(dataURL,function(){
+                $('#modal_detalhes').modal({show:true});
+            });
+        });
+    });
 
+    $(document).ready(function(){
+        $('.gosteiDeste').on('click',function(){
+            var dataURL = $(this).attr('data-href');
+            $('.modal-body').load(dataURL,function(){
+                $('#gostei_deste').modal({show:true});
+            });
+        });
+    });
+</script>
 
 
 
