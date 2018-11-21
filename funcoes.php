@@ -16,7 +16,7 @@ function menu(){
         <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
                 <a href="index.php"><i id="home" class="fas fa-home fa-2x text-center mx-1"></i></span></a>
-                <a target="_blank" rel="noopener noreferrer" href="https://wa.me/5561983133640"><i id="whatsapp" class="fab fa-whatsapp fa-2x"></i></span></a>
+                <a target="_blank" rel="noopener noreferrer" href="https://wa.me/556181111368"><i id="whatsapp" class="fab fa-whatsapp fa-2x"></i></span></a>
                 <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/csmelocutelaria"><i id="facebook" class="fab fa-facebook-square fa-2x text-center mx-1"></i></span></a>
                 <a target="_blank" rel="noopener noreferrer" href="https://instagram.com/metalcdf/"><i id="instagram" class="fab fa-instagram fa-2x text-center mx-1"></i></span></a>
             </li>';

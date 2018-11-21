@@ -14,7 +14,7 @@ $dados = mysqli_fetch_array($result);
 if($row == 1) {
     session_start();
     $_SESSION['usuario'] = $dados['email'];
-    echo '<script type="application/javascript">alert("Logado com sucesso!"); window.location.href ="index.php";;</script>';
+    header("Location: index.php");
 
     exit();
 } else {
