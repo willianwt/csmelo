@@ -1,17 +1,17 @@
 <?php
 include "conexao.php";
-if(!empty($_GET['id'])){
+if (!empty($_GET['id'])) {
 
     if ($conexao->connect_error) {
         die("Unable to connect database: " . $conexao->connect_error);
     }
 
     //get content from database
-    $sql = $conexao->query("SELECT * FROM produto WHERE id = {$_GET['id']}");
+    $sql = $conexao->query("SELECT * FROM produto WHERE id =" . $_GET['id']);
 
-    if($sql->num_rows > 0){
+    if ($sql->num_rows > 0) {
         $row = $sql->fetch_assoc();
-        echo '<h4 class="text-justify"><b>Eu gostei do produto: <u> '.$row['nome_produto'].'</u></b></h4>';
+        echo '<h4 class="text-justify"><b>Eu gostei do produto: <u> ' . ucfirst($row['nome_produto']) . '</u></b></h4>';
         echo '<div class="form-group row">';
         echo '<label for="nome" class="col-sm-1 col-form-label">Nome</label>';
         echo '<div class="col-sm-11">';
@@ -26,13 +26,13 @@ if(!empty($_GET['id'])){
         echo '<input type="email" class="form-control" id="email" name="email" placeholder="Email" required>';
         echo '</div>';
         echo '</div>';
-        echo '<input type="hidden" name="id_produto" value="'.$row['id'].'" id="id_produto">';
+        echo '<input type="hidden" name="id_produto" value="' . $row['id'] . '" id="id_produto">';
         echo '<div class="form-group">';
         echo '<label for="mensagem">Mensagem</label>';
         echo '<textarea class="form-control" id="mensagem" name="mensagem" rows="4" required></textarea>';
         echo '</div>';
 
-    }else{
+    } else {
         echo 'Conteudo não encontrado..';
     }
 }
@@ -51,13 +51,11 @@ if (isset($_POST["mensagem"])) {
 
     $res = $conexao->query($sql) or die($conexao->error);
 
-    if($res==true){
+    if ($res == true) {
         print "<script type=\"application/javascript\">alert(\"Mensagem enviada! Aguarde nosso retorno!\"); window.location.href =\"index.php\";;</script>';";
 
-    }else{
+    } else {
         print "<script type=\"application/javascript\">alert(\"Não foi possível enviar a mensagem. Tente novamente..\"); window.location.href =\"index.php\";;</script>';";
     }
 
 }
-
-?>
