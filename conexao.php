@@ -1,8 +1,8 @@
 <?php
     $host = "localhost";
-    $user = "id8001784_csmelocutelaria";
+    $user = "csmelo";
     $pass = "csmelo2018";
-    $db = "id8001784_csmelo";
+    $db = "csmelo";
 
     $conexao = new mysqli($host,$user,$pass,$db) or die($conexao -> error);
     if (!mysqli_set_charset($conexao, 'utf8')) {
